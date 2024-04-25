@@ -1,17 +1,31 @@
+import java.util.Locale;
+import java.util.Scanner;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+        String message = "Depois ENTER para o próximo campo: ";
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        System.out.println("Por favor, digite o número da Conta.");
+        System.out.println(message);
+        int numeroConta = scanner.nextInt();
+        scanner.nextLine();
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        System.out.println("Por favor, digite o número da Agência.");
+        System.out.println(message);
+        String numeroAgencia = scanner.nextLine();
+
+        System.out.println("Por favor, digite o Nome do cliente.");
+        System.out.println(message);
+        String nomeCliente = scanner.nextLine();
+
+        System.out.println("Por favor, digite o Saldo.");
+        double saldoConta = scanner.nextDouble();
+        scanner.nextLine();
+
+        System.out.println("Olá "+ nomeCliente +", obrigado por criar uma conta em nosso banco, sua agência é "+ numeroAgencia +", conta "+ numeroConta +" e seu saldo "+ saldoConta +" já está disponível para saque.");
+        scanner.close();
     }
 }
